@@ -13,7 +13,8 @@
             IsBackButtonVisible="Collapsed"
             IsPaneToggleButtonVisible="False"
             IsTabStop="False"
-            PaneDisplayMode="LeftCompact">
+            PaneDisplayMode="LeftCompact"
+            SelectionChanged="OnNavigate">
             <NavigationView.MenuItems>
                 <NavigationViewItem
                     Content="Welcome"
@@ -26,7 +27,7 @@
                 <NavigationViewItem
                     Content="Console"
                     Icon="ShowResults"
-                    Tag="ConsolePage" />
+                    Tag="AppEventViewPage" />
                 <NavigationViewItem
                     Content="Weather"
                     Icon="World"

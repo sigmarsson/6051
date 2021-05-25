@@ -26,5 +26,21 @@ namespace Temp
         {
             this.InitializeComponent();
         }
+
+        private async void OnNavigate(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+
+            if (args.SelectedItem as NavigationViewItem is var navigateTo)
+            {
+                var ns = $"Weather.History.Pages";
+                var targetPage = navigateTo.Tag as string;
+                var targetType = Type.GetType($"{ns}.{targetPage}");
+
+                if (targetType !=null)
+                {
+                    contentFrame.Navigate(targetType);
+                }
+            }
+        }
     }
 }
