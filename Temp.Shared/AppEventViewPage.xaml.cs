@@ -10,7 +10,7 @@ using Microsoft.Web.WebView2.Core;
 
 namespace Weather.History.Pages
 {
-    public sealed partial class AppEventViewPage : Page
+    public sealed partial class AppEventViewPage : Page, INotifyPropertyChanged
     {
         const string LogDomain = "AppEvent";
 
@@ -36,6 +36,10 @@ namespace Weather.History.Pages
 
             OnReceived();
             OnReceived();
+            OnReceived();
+            OnReceived();
+            OnReceived();
+            OnReceived();
         }
 
         public void OnReceived()
@@ -53,11 +57,6 @@ namespace Weather.History.Pages
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HtmlContent)));
 
-            if (PropertyChanged is null)
-            {
-                var ee = 1;
-
-            }
 //#endif
         }
 

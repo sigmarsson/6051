@@ -6,14 +6,22 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winuiwebview2="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Microsoft.UI.Xaml.Controls.WebView2)"
+    xmlns:nowinui="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypeNotPresent(Microsoft.UI.Xaml.Controls.WebView2)"
     xmlns:wasmcc="using:Weather.History.Control?IsTypeNotPresent(Microsoft.UI.Xaml.Controls.WebView2)"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <AppBarButton Content="Event" Click="OnClick"/>
-		<winuiwebview2:WebView2 Width="700" Height="300" x:Name="webView" Source="{x:Bind HtmlLog}" NavigationCompleted="OnNavigated"/>
-        <TextBlock Text="{x:Bind HtmlContent, Mode=OneWay}"/>
-        <wasmcc:WebAssemblyHtmlControl Width="500" Height="300" HtmlContent="{x:Bind HtmlContent, Mode=OneWay}" />
-	</StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <AppBarButton Grid.Row="0" Icon="Play" Label="Event" Click="OnClick"/>
+        <winuiwebview2:WebView2 Grid.Row="1" x:Name="webView" CoreWebView2Initialized="OnWebViewReady"/>
+        <nowinui:ScrollViewer Grid.Row="1"
+                              VerticalScrollMode="Auto"
+                              VerticalScrollBarVisibility="Auto">
+            <wasmcc:WebAssemblyHtmlControl HtmlContent="{x:Bind HtmlContent, Mode=OneWay}" />
+        </nowinui:ScrollViewer>
+    </Grid>
 </Page>
