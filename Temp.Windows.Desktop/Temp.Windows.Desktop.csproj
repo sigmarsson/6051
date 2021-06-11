@@ -9,14 +9,16 @@
 		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.ProjectReunion" Version="0.5.5" />
-		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.5.5" />
-		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.5.5" />
-		<Manifest Include="$(ApplicationManifest)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
-		<PackageReference Include="Uno.Core" Version="2.3.0" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0-preview" />
+    <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0-preview" />
+    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0-preview" />
+    <Manifest Include="$(ApplicationManifest)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" Version="8.1.97" />
+    <PackageReference Include="Prism.Uno.WinUI" Version="8.1.97" />
+    <PackageReference Include="Uno.Core" Version="2.4.0" />
+  </ItemGroup>
 	
 	<ItemGroup>
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />

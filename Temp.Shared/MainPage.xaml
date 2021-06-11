@@ -21,17 +21,13 @@
                     Icon="Home"
                     Tag="WelcomeShellPage" />
                 <NavigationViewItem
-                    Content="About"
-                    Icon="PreviewLink"
-                    Tag="AboutPage" />
+                    Content="Prism Attach Property"
+                    Icon="World"
+                    Tag="ConsolePage" />
                 <NavigationViewItem
                     Content="Console"
                     Icon="ShowResults"
                     Tag="AppEventViewPage" />
-                <NavigationViewItem
-                    Content="Weather"
-                    Icon="World"
-                    Tag="ContentPage" />
                 <NavigationViewItem
                     Content="Log"
                     Icon="More"
